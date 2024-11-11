@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface AtomTileProps {
   onClick?: () => void;
@@ -9,13 +9,13 @@ export default function AtomTile({ onClick }: AtomTileProps) {
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
-    if (isActive) {
-        setIsActive(false);
-    } else {
-        setIsActive(true);
-    }
+    setIsActive(!isActive);
     onClick?.();
   };
+
+  useEffect(() => {
+    console.log("AtomTile rendered");
+  });
 
   return (
     <div
