@@ -20,7 +20,7 @@ export default function AtomTile({ onClick }: AtomTileProps) {
   return (
     <div
       className={`w-4 h-4 aspect-square border-[0.5px] border-gray-300 cursor-pointer transition-colors ${
-        isActive ? "bg-blue-500" : "bg-white hover:bg-gray-100"
+        isActive ? "bg-blue-500" : "bg-white hover:bg-gray-300"
       }`}
       onClick={handleClick}
     />
