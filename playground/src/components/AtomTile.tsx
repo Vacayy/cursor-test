@@ -1,11 +1,10 @@
-"use client";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 
 interface AtomTileProps {
   onClick?: () => void;
 }
 
-export default function AtomTile({ onClick }: AtomTileProps) {
+function AtomTile({ onClick }: AtomTileProps) {
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
@@ -26,3 +25,5 @@ export default function AtomTile({ onClick }: AtomTileProps) {
     />
   );
 }
+
+export default memo(AtomTile);
